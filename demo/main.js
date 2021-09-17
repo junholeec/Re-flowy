@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    var disabledClick = function () {
+    function disabledClick() {
         document.querySelector(".navactive").classList.add("navdisabled");
         document.querySelector(".navactive").classList.remove("navactive");
         this.classList.add("navactive");
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var aclick = false;
     var noinfo = false;
 
-    var beginTouch = function (event) {
+    function beginTouch(event) {
         aclick = true;
         noinfo = false;
         if (event.target.closest(".create-flowy")) {
@@ -98,11 +98,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    var checkTouch = function (event) {
+    function checkTouch(event) {
         aclick = false;
     }
 
-    var doneTouch = function (event) {
+    function doneTouch(event) {
         if (event.type === "mouseup" && aclick && !noinfo) {
             if (!rightcard && event.target.closest(".block") && !event.target.closest(".block").classList.contains("dragging")) {
                 tempblock = event.target.closest(".block");
